@@ -23,6 +23,11 @@ abstract class AbstractRequest
     protected $url = 'https://api.timechimp.com/';
 
     /**
+     * @var string
+     */
+    protected $accessToken;
+
+    /**
      * @param string $url
      *
      * @return \Guapa\TimeChimp\AbstractRequest
@@ -30,6 +35,18 @@ abstract class AbstractRequest
     public function setUrl(string $url): AbstractRequest
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * @param string $token
+     *
+     * @return \Guapa\TimeChimp\AbstractRequest
+     */
+    public function setAccessToken(string $token): AbstractRequest
+    {
+        $this->accessToken = $token;
 
         return $this;
     }
@@ -48,6 +65,10 @@ abstract class AbstractRequest
                     'Content-Type' => 'application/json',
                 ],
             ];
+
+            if ($this->accessToken !== null) {
+                $options['headers']['Authorization'] = "Bearer {$this->accessToken}";
+            }
 
             $this->client = new Client($options);
         }

@@ -14,12 +14,15 @@ To use this package you need to instantiate a new request like so:
 <?php
 
 $request = new \Guapa\TimeChimp\UsersRequest;
+$request->setAccessToken('abcde');
 
 /** @var \GuzzleHttp\Psr7\Response $response */
 $response = $request->getAll();
 
 $users = json_decode($response->getBody(), true);
 ```
+
+You need to add the access token after creating the instance of the request. This is done so the requests can be loaded using Dependency Injection
 
 Available requests are:
 - Customers
