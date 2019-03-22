@@ -2,16 +2,16 @@
 
 namespace Guapa\TimeChimp\Tests;
 
-use Guapa\TimeChimp\ExpensesRequest;
+use Guapa\TimeChimp\MileageRequest;
 
 /**
- * Class ExpensesRequestTest
+ * Class MileageRequestTest
  *
  * @package Guapa\TimeChimp\Tests
  *
- * @property \Guapa\TimeChimp\ExpensesRequest $request
+ * @property \Guapa\TimeChimp\MileageRequest $request
  */
-class ExpensesRequestTest extends TestCase
+class MileageRequestTest extends TestCase
 {
 
     /**
@@ -21,16 +21,16 @@ class ExpensesRequestTest extends TestCase
     {
         parent::setUp();
 
-        $this->request = new ExpensesRequest('https://api.timechimp.com/');
+        $this->request = new MileageRequest('https://api.timechimp.com/');
     }
 
     /** @test */
-    public function itCanGetExpensesByDateRange(): void
+    public function itCanGetMileageByDateRange(): void
     {
         $start = (new \DateTime())->setDate(2019, 1, 1);
         $end = (new \DateTime())->setDate(2019, 1, 31);
 
-        $file = __DIR__.'/data/expenses/date_range.json';
+        $file = __DIR__.'/data/mileage/date_range.json';
 
         $this->setResponse(file_get_contents($file));
 
@@ -41,9 +41,9 @@ class ExpensesRequestTest extends TestCase
     }
 
     /** @test */
-    public function expensesByDateRangeCanBeAString(): void
+    public function mileageByDateRangeCanBeAString(): void
     {
-        $file = __DIR__.'/data/expenses/date_range.json';
+        $file = __DIR__.'/data/mileage/date_range.json';
 
         $this->setResponse(file_get_contents($file));
 
@@ -54,16 +54,16 @@ class ExpensesRequestTest extends TestCase
     }
 
     /** @test */
-    public function expensesByDateRangeNeedsToBeAValidDate(): void
+    public function mileageByDateRangeNeedsToBeAValidDate(): void
     {
         $this->expectException(\Exception::class);
         $this->request->getByDateRange('2019-01-1', '2019-31-01');
     }
 
     /** @test */
-    public function itCanGetExpensesByProject()
+    public function itCanGetMileageByProject()
     {
-        $file = __DIR__.'/data/expenses/for_project.json';
+        $file = __DIR__.'/data/mileage/for_project.json';
 
         $this->setResponse(file_get_contents($file));
 
@@ -74,9 +74,9 @@ class ExpensesRequestTest extends TestCase
     }
 
     /** @test */
-    public function itCanGetExpensesById()
+    public function itCanGetMileageById()
     {
-        $file = __DIR__.'/data/expenses/get.json';
+        $file = __DIR__.'/data/mileage/get.json';
 
         $this->setResponse(file_get_contents($file));
 
@@ -87,9 +87,9 @@ class ExpensesRequestTest extends TestCase
     }
 
     /** @test */
-    public function itCanGetAllExpenses()
+    public function itCanGetAllMileage()
     {
-        $file = __DIR__.'/data/expenses/index.json';
+        $file = __DIR__.'/data/mileage/index.json';
 
         $this->setResponse(file_get_contents($file));
 
@@ -102,7 +102,7 @@ class ExpensesRequestTest extends TestCase
     /** @test */
     public function itCanUpdateAnExpense()
     {
-        $file = __DIR__.'/data/expenses/update.json';
+        $file = __DIR__.'/data/mileage/update.json';
 
         $this->setResponse(file_get_contents($file));
 
@@ -133,7 +133,7 @@ class ExpensesRequestTest extends TestCase
     /** @test */
     public function itCanCreateAnExpese()
     {
-        $file = __DIR__.'/data/expenses/create.json';
+        $file = __DIR__.'/data/mileage/create.json';
 
         $this->setResponse(file_get_contents($file));
 

@@ -2,12 +2,12 @@
 
 namespace Guapa\TimeChimp;
 
-class ExpensesRequest extends AbstractRequest
+class MileageRequest extends AbstractRequest
 {
     /**
-     * Get all expenses by date range.
+     * Get all mileages by date range.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/customers/v1customersid/get-expenses-by-date-range
+     * @see https://timechimp.docs.apiary.io/#reference/mileage/v1mileagedaterangestartdateenddate/get-mileage-by-date-range
      *
      * @param \DateTime|string $start
      * @param \DateTime|string $end
@@ -30,13 +30,13 @@ class ExpensesRequest extends AbstractRequest
         }
         $end = $end->format('Y-m-d');
 
-        return $this->execute('get', "expenses/daterange/{$start}/{$end}");
+        return $this->execute('get', "mileage/daterange/{$start}/{$end}");
     }
 
     /**
-     * Get all expenses for a single project.
+     * Get all mileages for a single project.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/expenses/v1expensesdaterangestartdateenddate/get-expenses-by-project
+     * @see https://timechimp.docs.apiary.io/#reference/mileage/v1mileageprojectprojectid/get-mileage-by-project
      *
      * @param mixed $projectId
      *
@@ -48,13 +48,13 @@ class ExpensesRequest extends AbstractRequest
      */
     public function forProject($projectId): \Psr\Http\Message\ResponseInterface
     {
-        return $this->execute('get', "expenses/project/{$projectId}");
+        return $this->execute('get', "mileage/project/{$projectId}");
     }
 
     /**
-     * Get a single expense.
+     * Get a single mileage.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/expenses/v1expensesid/get-expense
+     * @see https://timechimp.docs.apiary.io/#reference/mileage/v1mileageid/get-mileage
      *
      * @param mixed $id
      *
@@ -66,13 +66,13 @@ class ExpensesRequest extends AbstractRequest
      */
     public function get($id): \Psr\Http\Message\ResponseInterface
     {
-        return $this->execute('get', "expenses/{$id}");
+        return $this->execute('get', "mileage/{$id}");
     }
 
     /**
-     * Get all expenses.
+     * Get all mileages.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/expenses/v1expenses/get-expenses
+     * @see https://timechimp.docs.apiary.io/#reference/mileage/v1mileage/get-mileages
      *
      * @return \Psr\Http\Message\ResponseInterface
      * @throws \Guapa\TimeChimp\Exceptions\ClientException
@@ -82,13 +82,13 @@ class ExpensesRequest extends AbstractRequest
      */
     public function getAll(): \Psr\Http\Message\ResponseInterface
     {
-        return $this->execute('get', 'expenses');
+        return $this->execute('get', 'mileage');
     }
 
     /**
-     * Update an expense.
+     * Update a mileage.
      *
-     * https://timechimp.docs.apiary.io/#reference/expenses/v1expenses/update-expense
+     * https://timechimp.docs.apiary.io/#reference/mileage/v1mileage/update-mileage
      *
      * @param array $parameters
      *
@@ -106,13 +106,13 @@ class ExpensesRequest extends AbstractRequest
             ];
         }
 
-        return $this->execute('put', 'expenses', $parameters);
+        return $this->execute('put', 'mileage', $parameters);
     }
 
     /**
-     * Create an expense.
+     * Create an mileage.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/expenses/v1expenses/create-new-expense
+     * @see https://timechimp.docs.apiary.io/#reference/mileage/v1mileage/create-new-mileage
      *
      * @param array $parameters
      *
@@ -130,13 +130,13 @@ class ExpensesRequest extends AbstractRequest
             ];
         }
 
-        return $this->execute('post', 'expenses', $parameters);
+        return $this->execute('post', 'mileage', $parameters);
     }
 
     /**
-     * Delete an expense.
+     * Delete an mileage.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/expenses/v1expenses/delete-expense
+     * @see https://timechimp.docs.apiary.io/#reference/mileage/v1mileage/delete-mileage
      *
      * @param mixed $id
      *
@@ -148,6 +148,6 @@ class ExpensesRequest extends AbstractRequest
      */
     public function delete($id): \Psr\Http\Message\ResponseInterface
     {
-        return $this->execute('delete', "expenses/{$id}");
+        return $this->execute('delete', "mileage/{$id}");
     }
 }
