@@ -3,20 +3,16 @@
 namespace Guapa\TimeChimp\Tests;
 
 use Guapa\TimeChimp\CustomersRequest;
-use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Response;
 
+/**
+ * Class CustomerRequestTest
+ *
+ * @package Guapa\TimeChimp\Tests
+ *
+ * @property \Guapa\TimeChimp\CustomersRequest $request
+ */
 class CustomerRequestTest extends TestCase
 {
-
-
-    /**
-     * @var CustomersRequest
-     */
-    protected $request;
-
     /**
      * This method is called before each test.
      */
@@ -27,27 +23,10 @@ class CustomerRequestTest extends TestCase
         $this->request = new CustomersRequest('https://api.timechimp.com/');
     }
 
-    /**
-     * @param mixed $contents
-     * @param int $statusCode
-     */
-    protected function setResponse($contents, int $statusCode = 200)
-    {
-        $mock = new MockHandler([
-            new Response($statusCode, [], $contents),
-        ]);
-
-        $handler = HandlerStack::create($mock);
-        $client = new Client([
-            'handler' => $handler,
-        ]);
-        $this->request->setClient($client);
-    }
-
     /** @test */
     public function itCanGetAllCustomers(): void
     {
-        $file = __DIR__.'/data/customers/get_all.json';
+        $file = __DIR__.'/data/customers/index.json';
 
         $this->setResponse(file_get_contents($file));
 
@@ -58,37 +37,37 @@ class CustomerRequestTest extends TestCase
     }
 
     /** @test */
-    public function itCanUpdateACustomer()
+    public function itCanUpdateACustomer(): void
     {
         $this->markTestIncomplete('Test api is not returning what should be returned');
     }
 
     /** @test */
-    public function itCanCreateACustomer()
+    public function itCanCreateACustomer(): void
     {
         $this->markTestIncomplete('Test api is not returning what should be returned');
     }
 
     /** @test */
-    public function itCanGetACustomerByRelationId()
+    public function itCanGetACustomerByRelationId(): void
     {
         $this->markTestIncomplete('Test api is not returning what should be returned');
     }
 
     /** @test */
-    public function itCanGetACustomerByName()
+    public function itCanGetACustomerByName(): void
     {
         $this->markTestIncomplete('Test api is not returning what should be returned');
     }
 
     /** @test */
-    public function itCanGetACustomerById()
+    public function itCanGetACustomerById(): void
     {
         $this->markTestIncomplete('Test api is not returning what should be returned');
     }
 
     /** @test */
-    public function itCanDeleteACustomer()
+    public function itCanDeleteACustomer(): void
     {
         $this->setResponse(null);
 

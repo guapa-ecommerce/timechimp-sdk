@@ -106,14 +106,16 @@ abstract class AbstractRequest
         try {
             return $client->request($method, $this->getRequestUrl($resource), $parameters);
         } catch (RequestException $exception) {
+            $response = \json_decode((string)$exception->getResponse()->getBody(), true);
+            $message = $response['message'] ??$exception->getMessage();
+
             switch ($exception->getCode()) {
                 case 401:
-                    $message = __('You are not authenticated. Authentication required to perform this operation.');
                     throw new UnauthorizedException($message, 401, $exception);
                 case 404:
-                    throw new NotFoundException($exception->getMessage(), 404, $exception);
+                    throw new NotFoundException($message, 404, $exception);
                 default:
-                    throw new ClientException($exception->getMessage(), $exception->getCode(), $exception);
+                    throw new ClientException($message, $exception->getCode(), $exception);
             }
         }
     }
