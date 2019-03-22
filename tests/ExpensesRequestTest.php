@@ -36,7 +36,7 @@ class ExpensesRequestTest extends TestCase
 
         $response = $this->request->getByDateRange($start, $end);
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -49,7 +49,7 @@ class ExpensesRequestTest extends TestCase
 
         $response = $this->request->getByDateRange('2019-01-1', '2019-01-31');
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -69,7 +69,7 @@ class ExpensesRequestTest extends TestCase
 
         $response = $this->request->forProject(1);
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -82,7 +82,7 @@ class ExpensesRequestTest extends TestCase
 
         $response = $this->request->get(1);
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -95,7 +95,7 @@ class ExpensesRequestTest extends TestCase
 
         $response = $this->request->getAll();
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -126,7 +126,7 @@ class ExpensesRequestTest extends TestCase
             'status'          => 1,
         ]);
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -156,7 +156,7 @@ class ExpensesRequestTest extends TestCase
             'status'          => 0,
         ]);
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -167,7 +167,7 @@ class ExpensesRequestTest extends TestCase
 
         $response = $this->request->delete(-80739115);
 
-        $this->assertEmpty((string) $response->getBody());
+        $this->assertEmpty((string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 }

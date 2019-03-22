@@ -32,7 +32,7 @@ class CustomerRequestTest extends TestCase
 
         $response = $this->request->getAll();
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -73,7 +73,7 @@ class CustomerRequestTest extends TestCase
 
         $response = $this->request->getAll();
 
-        $this->assertEmpty((string) $response->getBody());
+        $this->assertEmpty((string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 }

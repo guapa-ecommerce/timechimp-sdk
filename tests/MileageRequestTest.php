@@ -36,7 +36,7 @@ class MileageRequestTest extends TestCase
 
         $response = $this->request->getByDateRange($start, $end);
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -49,7 +49,7 @@ class MileageRequestTest extends TestCase
 
         $response = $this->request->getByDateRange('2019-01-1', '2019-01-31');
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -69,7 +69,7 @@ class MileageRequestTest extends TestCase
 
         $response = $this->request->forProject(1);
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -82,7 +82,7 @@ class MileageRequestTest extends TestCase
 
         $response = $this->request->get(1);
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -95,7 +95,7 @@ class MileageRequestTest extends TestCase
 
         $response = $this->request->getAll();
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -107,26 +107,26 @@ class MileageRequestTest extends TestCase
         $this->setResponse(file_get_contents($file));
 
         $response = $this->request->update([
-            'id'              => 75972066,
-            'customerId'      => 2683812,
-            'customerName'    => 'anim nisi Duis',
-            'projectId'       => -55375245,
-            'projectName'     => 'minim cillum est',
-            'categoryName'    => 'eiusmod tempor culpa id',
-            'categoryId'      => -80830887,
-            'userId'          => 12038998,
-            'userDisplayName' => 'cupidatat veniam sint in',
-            'date'            => '1954-11-28T07 =>54 =>05.817Z',
-            'notes'           => 'Excepteur sunt ullamco',
-            'attachment'      => 'irure aliqua eu commodo dolore',
-            'quantity'        => 82993125.80097505,
-            'rate'            => -55791626.84944356,
-            'tax'             => -51428658.4957496,
+            'id'              => -81963477,
+            'customerId'      => -67716773,
+            'customerName'    => 'ullamco consectetur ut ',
+            'projectId'       => 33894848,
+            'projectName'     => 'magna',
+            'vehicleId'       => 47391928,
+            'vehicleName'     => 'in est cul',
+            'userId'          => 45167270,
+            'userDisplayName' => 'velit reprehenderit',
+            'date'            => '1993-03-29T08 =>11 =>04.960Z',
+            'fromAddress'     => 'aliqua cillum',
+            'toAddress'       => 'in fugiat',
+            'notes'           => 'qui Lorem irure',
+            'distance'        => -4135947.883763969,
             'billable'        => false,
-            'status'          => 1,
+            'type'            => 1,
+            'status'          => 2,
         ]);
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -138,25 +138,26 @@ class MileageRequestTest extends TestCase
         $this->setResponse(file_get_contents($file));
 
         $response = $this->request->create([
-            'customerId'      => -76223598,
-            'customerName'    => 'dolor ut',
-            'projectId'       => -84545586,
-            'projectName'     => 'et ut',
-            'categoryName'    => 'ut non ipsum Lorem',
-            'categoryId'      => 74927363,
-            'userId'          => -74707834,
-            'userDisplayName' => 'do',
-            'date'            => '1962-12-31T21 =>31 =>56.697Z',
-            'notes'           => 'Ut anim',
-            'attachment'      => 'elit voluptate labore',
-            'quantity'        => 57837568.878623456,
-            'rate'            => -12519251.68377021,
-            'tax'             => 86102218.02420339,
-            'billable'        => true,
-            'status'          => 0,
+            'id'              => 57461571,
+            'customerId'      => -54415542,
+            'customerName'    => 'in id',
+            'projectId'       => 42943506,
+            'projectName'     => '',
+            'vehicleId'       => -20931634,
+            'vehicleName'     => 'dolor',
+            'userId'          => -57635890,
+            'userDisplayName' => 'non anim in',
+            'date'            => '1999-05-24T01 =>28 =>05.542Z',
+            'fromAddress'     => 'nisi consequat irure quis ut',
+            'toAddress'       => 'deserunt ip',
+            'notes'           => 'veniam id voluptate',
+            'distance'        => -68340686.39230031,
+            'billable'        => false,
+            'type'            => 2,
+            'status'          => 4,
         ]);
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -167,7 +168,7 @@ class MileageRequestTest extends TestCase
 
         $response = $this->request->delete(-80739115);
 
-        $this->assertEmpty((string) $response->getBody());
+        $this->assertEmpty((string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 }

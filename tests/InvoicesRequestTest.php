@@ -5,7 +5,7 @@ namespace Guapa\TimeChimp\Tests;
 use Guapa\TimeChimp\InvoicesRequest;
 
 /**
- * Class CustomerRequestTest
+ * Class InvoicesRequestTest
  *
  * @package Guapa\TimeChimp\Tests
  *
@@ -32,7 +32,7 @@ class InvoicesRequestTest extends TestCase
 
         $response = $this->request->getAll();
 
-        $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertJsonStringEqualsJsonFile($file, (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
     }
 }
