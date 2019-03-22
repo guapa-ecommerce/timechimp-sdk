@@ -44,10 +44,8 @@ class CustomerRequestTest extends TestCase
         $this->request->setClient($client);
     }
 
-    /**
-     * @test
-     */
-    public function itCanRequestAllUsers(): void
+    /** @test */
+    public function itCanGetAllCustomers(): void
     {
         $file = __DIR__.'/data/customers/get_all.json';
 
@@ -56,5 +54,47 @@ class CustomerRequestTest extends TestCase
         $response = $this->request->getAll();
 
         $this->assertJsonStringEqualsJsonFile($file, (string) $response->getBody());
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    /** @test */
+    public function itCanUpdateACustomer()
+    {
+        $this->markTestIncomplete('Test api is not returning what should be returned');
+    }
+
+    /** @test */
+    public function itCanCreateACustomer()
+    {
+        $this->markTestIncomplete('Test api is not returning what should be returned');
+    }
+
+    /** @test */
+    public function itCanGetACustomerByRelationId()
+    {
+        $this->markTestIncomplete('Test api is not returning what should be returned');
+    }
+
+    /** @test */
+    public function itCanGetACustomerByName()
+    {
+        $this->markTestIncomplete('Test api is not returning what should be returned');
+    }
+
+    /** @test */
+    public function itCanGetACustomerById()
+    {
+        $this->markTestIncomplete('Test api is not returning what should be returned');
+    }
+
+    /** @test */
+    public function itCanDeleteACustomer()
+    {
+        $this->setResponse(null);
+
+        $response = $this->request->getAll();
+
+        $this->assertEmpty((string) $response->getBody());
+        $this->assertEquals(200, $response->getStatusCode());
     }
 }
