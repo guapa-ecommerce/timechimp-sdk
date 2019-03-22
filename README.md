@@ -47,9 +47,6 @@ See the official documentation for more information: https://timechimp.docs.apia
 - [Robert-John van Doesburg](https://github.com/rjvandoesburg)
 - [All Contributors](../../contributors)
 
-Special thanks for Spatie for their guidelines and their packages as an inspiration
-- [Spatie](https://spatie.be)
-
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
