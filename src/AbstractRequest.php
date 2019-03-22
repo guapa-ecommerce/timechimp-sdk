@@ -20,16 +20,18 @@ abstract class AbstractRequest
     /**
      * @var \GuzzleHttp\Client|string
      */
-    protected $url;
+    protected $url = 'https://api.timechimp.com/';
 
     /**
-     * AbstractRequest constructor.
+     * @param string $url
      *
-     * @param string|\GuzzleHttp\Client $url
+     * @return \Guapa\TimeChimp\AbstractRequest
      */
-    public function __construct($url)
+    public function setUrl(string $url): AbstractRequest
     {
         $this->url = $url;
+
+        return $this;
     }
 
     /**

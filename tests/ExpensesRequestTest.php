@@ -21,7 +21,7 @@ class ExpensesRequestTest extends TestCase
     {
         parent::setUp();
 
-        $this->request = new ExpensesRequest('https://api.timechimp.com/');
+        $this->request = new ExpensesRequest;
     }
 
     /** @test */

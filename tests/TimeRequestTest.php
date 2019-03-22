@@ -21,7 +21,7 @@ class TimeRequestTest extends TestCase
     {
         parent::setUp();
 
-        $this->request = new TimeRequest('https://api.timechimp.com/');
+        $this->request = new TimeRequest;
     }
 
     /** @test */

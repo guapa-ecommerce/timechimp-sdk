@@ -11,7 +11,7 @@ use Guapa\TimeChimp\CustomersRequest;
  *
  * @property \Guapa\TimeChimp\CustomersRequest $request
  */
-class CustomerRequestTest extends TestCase
+class CustomersRequestTest extends TestCase
 {
     /**
      * This method is called before each test.
@@ -20,7 +20,7 @@ class CustomerRequestTest extends TestCase
     {
         parent::setUp();
 
-        $this->request = new CustomersRequest('https://api.timechimp.com/');
+        $this->request = new CustomersRequest;
     }
 
     /** @test */

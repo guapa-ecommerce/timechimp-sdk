@@ -20,7 +20,7 @@ class ProjectsRequestTest extends TestCase
     {
         parent::setUp();
 
-        $this->request = new ProjectsRequest('https://api.timechimp.com/');
+        $this->request = new ProjectsRequest;
     }
 
     /** @test */

@@ -21,7 +21,7 @@ class MileageRequestTest extends TestCase
     {
         parent::setUp();
 
-        $this->request = new MileageRequest('https://api.timechimp.com/');
+        $this->request = new MileageRequest;
     }
 
     /** @test */

@@ -20,7 +20,7 @@ class InvoicesRequestTest extends TestCase
     {
         parent::setUp();
 
-        $this->request = new InvoicesRequest('https://api.timechimp.com/');
+        $this->request = new InvoicesRequest;
     }
 
     /** @test */
