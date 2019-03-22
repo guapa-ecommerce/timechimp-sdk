@@ -88,7 +88,7 @@ class MileageRequest extends AbstractRequest
     /**
      * Update a mileage.
      *
-     * https://timechimp.docs.apiary.io/#reference/mileage/v1mileage/update-mileage
+     * @see https://timechimp.docs.apiary.io/#reference/mileage/v1mileage/update-mileage
      *
      * @param array $parameters
      *
