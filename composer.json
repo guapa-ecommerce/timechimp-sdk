@@ -1,0 +1,29 @@
+{
+  "name": "guapa/timechimp-sdk",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Robert-John van Doesburg",
+      "email": "robertjohn.van.doesburg@guapa.nl"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.2",
+    "guzzlehttp/guzzle": "^6.0",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Guapa\\TimeChimp\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Guapa\\TimeChimp\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
+  }
+}
