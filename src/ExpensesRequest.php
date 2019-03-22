@@ -146,7 +146,7 @@ class ExpensesRequest extends AbstractRequest
      * @throws \Guapa\TimeChimp\Exceptions\UnauthorizedException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function delete($id)
+    public function delete($id): \Psr\Http\Message\ResponseInterface
     {
         return $this->execute('delete', "expenses/{$id}");
     }
