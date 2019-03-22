@@ -2,13 +2,13 @@
 
 namespace Guapa\TimeChimp;
 
-class ProjectNotesRequest extends AbstractRequest
+class ProjectsRequest extends AbstractRequest
 {
 
     /**
-     * Get all project notes.
+     * Get all projects.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/projectnotes/v1projectnotes/get-all-project-notes
+     * @see https://timechimp.docs.apiary.io/#reference/projects/v1projects/get-all-projects
      *
      * @return \Psr\Http\Message\ResponseInterface
      * @throws \Guapa\TimeChimp\Exceptions\ClientException
@@ -18,13 +18,13 @@ class ProjectNotesRequest extends AbstractRequest
      */
     public function getAll(): \Psr\Http\Message\ResponseInterface
     {
-        return $this->execute('get', 'projectnotes');
+        return $this->execute('get', 'projects');
     }
 
     /**
-     * Update a project note.
+     * Update a project.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/projectnotes/v1projectnotes/update-project-note
+     * @see https://timechimp.docs.apiary.io/#reference/projects/v1projects/update-project
      *
      * @param array $parameters
      *
@@ -42,13 +42,13 @@ class ProjectNotesRequest extends AbstractRequest
             ];
         }
 
-        return $this->execute('put', 'projectnotes', $parameters);
+        return $this->execute('put', 'projects', $parameters);
     }
 
     /**
-     * Create a project note.
+     * Create a project.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/projectnotes/v1projectnotes/create-new-project-notes
+     * @see https://timechimp.docs.apiary.io/#reference/projects/v1projects/create-new-project
      *
      * @param array $parameters
      *
@@ -66,13 +66,13 @@ class ProjectNotesRequest extends AbstractRequest
             ];
         }
 
-        return $this->execute('post', 'projectnotes', $parameters);
+        return $this->execute('post', 'projects', $parameters);
     }
 
     /**
-     * Delete a project note.
+     * Delete a project.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/projectnotes/v1projectnotes/delete-project-note
+     * @see https://timechimp.docs.apiary.io/#reference/projects/v1projects/delete-project
      *
      * @param mixed $id
      *
@@ -84,13 +84,13 @@ class ProjectNotesRequest extends AbstractRequest
      */
     public function delete($id): \Psr\Http\Message\ResponseInterface
     {
-        return $this->execute('delete', "projectnotes/{$id}");
+        return $this->execute('delete', "projects/{$id}");
     }
 
     /**
-     * Get a project note.
+     * Get a project.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/projectnotes/v1projectnotesid/get-projectnsote
+     * @see https://timechimp.docs.apiary.io/#reference/projects/v1projectsid/get-project
      *
      * @param mixed $id
      *
@@ -102,13 +102,13 @@ class ProjectNotesRequest extends AbstractRequest
      */
     public function get($id): \Psr\Http\Message\ResponseInterface
     {
-        return $this->execute('get', "projectnotes/{$id}");
+        return $this->execute('get', "projects/{$id}");
     }
 
     /**
-     * Get all project notes by project.
+     * Get all projects by customer.
      *
-     * @see https://timechimp.docs.apiary.io/#reference/projectnotes/v1projectnotesprojectprojectid/get-project-notes-by-project
+     * @see https://timechimp.docs.apiary.io/#reference/projects/v1projectscustomercustomerid/get-projects-by-customer
      *
      * @param mixed $projectId
      *
@@ -120,6 +120,24 @@ class ProjectNotesRequest extends AbstractRequest
      */
     public function forProject($projectId): \Psr\Http\Message\ResponseInterface
     {
-        return $this->execute('get', "projectnotes/project/{$projectId}");
+        return $this->execute('get', "projects/project/{$projectId}");
+    }
+
+    /**
+     * Get insights for a project.
+     *
+     * @see https://timechimp.docs.apiary.io/#reference/projects/v1projectsinsightsid/get-project-insights
+     *
+     * @param mixed $projectId
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     * @throws \Guapa\TimeChimp\Exceptions\ClientException
+     * @throws \Guapa\TimeChimp\Exceptions\NotFoundException
+     * @throws \Guapa\TimeChimp\Exceptions\UnauthorizedException
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function insights($projectId): \Psr\Http\Message\ResponseInterface
+    {
+        return $this->execute('get', "projects/insights/{$projectId}");
     }
 }

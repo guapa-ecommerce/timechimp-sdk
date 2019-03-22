@@ -1,0 +1,14 @@
+{
+  "totalHours": 89934699.08836663,
+  "totalHoursBillable": 55215723.098727524,
+  "totalHoursNonBillable": 15151943.501230478,
+  "totalUninvoiced": -10407192.151253581,
+  "totalInvoiced": 65560218.90684861,
+  "totalWrittenOff": 43521148.92870659,
+  "totalScheduled": -99719399.94712038,
+  "budgetPercentage": -70258901,
+  "budget": -17150521.189142466,
+  "spend": 39757971.39076045,
+  "remainingBudget": -51746276.695373975,
+  "costs": -11319517.70832184
+}
