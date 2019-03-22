@@ -25,7 +25,7 @@ class TimeRequestTest extends TestCase
     }
 
     /** @test */
-    public function itCanGetTimeByDateRange(): void
+    public function itCanGetTimeEntriesByDateRange(): void
     {
         $start = (new \DateTime())->setDate(2019, 1, 1);
         $end = (new \DateTime())->setDate(2019, 1, 31);
@@ -41,7 +41,7 @@ class TimeRequestTest extends TestCase
     }
 
     /** @test */
-    public function timeByDateRangeCanBeAString(): void
+    public function timeEntriesByDateRangeCanBeAString(): void
     {
         $file = __DIR__.'/data/time/date_range.json';
 
@@ -54,14 +54,14 @@ class TimeRequestTest extends TestCase
     }
 
     /** @test */
-    public function timeByDateRangeNeedsToBeAValidDate(): void
+    public function timeEntriesByDateRangeNeedsToBeAValidDate(): void
     {
         $this->expectException(\Exception::class);
         $this->request->getByDateRange('2019-01-1', '2019-31-01');
     }
 
     /** @test */
-    public function itCanGetTimeByProject()
+    public function itCanGetTimeEntriesByProject()
     {
         $file = __DIR__.'/data/time/for_project.json';
 
@@ -74,7 +74,7 @@ class TimeRequestTest extends TestCase
     }
 
     /** @test */
-    public function itCanGetTimeById()
+    public function itCanGetATimeEntryById()
     {
         $file = __DIR__.'/data/time/get.json';
 
@@ -87,7 +87,7 @@ class TimeRequestTest extends TestCase
     }
 
     /** @test */
-    public function itCanGetAllTime()
+    public function itCanGetAllTimeEntities()
     {
         $file = __DIR__.'/data/time/index.json';
 
@@ -100,7 +100,7 @@ class TimeRequestTest extends TestCase
     }
 
     /** @test */
-    public function itCanUpdateAnExpense()
+    public function itCanUpdateATimeEntry()
     {
         $file = __DIR__.'/data/time/update.json';
 
@@ -136,7 +136,7 @@ class TimeRequestTest extends TestCase
     }
 
     /** @test */
-    public function itCanCreateAnExpese()
+    public function itCanCreateATimeEntry()
     {
         $file = __DIR__.'/data/time/create.json';
 
@@ -172,7 +172,7 @@ class TimeRequestTest extends TestCase
     }
 
     /** @test */
-    public function itCanDeleteAnExpense()
+    public function itCanDeleteATimeEntry()
     {
         $this->setResponse(null);
 
