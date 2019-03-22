@@ -7,7 +7,6 @@ use Guapa\TimeChimp\Exceptions\NotFoundException;
 use Guapa\TimeChimp\Exceptions\UnauthorizedException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Psr7;
 use Psr\Http\Message\ResponseInterface;
 
 abstract class AbstractRequest
@@ -95,7 +94,7 @@ abstract class AbstractRequest
      */
     public function getRequestUrl($resource)
     {
-        return Psr7\uri_for($this->getApi().'/'.$resource);
+        return \GuzzleHttp\Psr7\uri_for($this->getApi().'/'.$resource);
     }
 
     /**

@@ -1,6 +1,7 @@
 # Call the TimeChimp API with a breeze
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/guapa/timechimp-sdk.svg?style=flat-square)](https://packagist.org/packages/guapa/timechimp-sdk)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Build Status](https://travis-ci.org/guapa-ecommerce/timechimp-sdk.svg?branch=master)](https://travis-ci.org/guapa-ecommerce/timechimp-sdk)
 [![Quality Score](https://img.shields.io/scrutinizer/g/guapa-ecommerce/timechimp-sdk.svg?style=flat-square)](https://scrutinizer-ci.com/g/guapa-ecommerce/timechimp-sdk)
 [![Total Downloads](https://img.shields.io/packagist/dt/guapa/timechimp-sdk.svg?style=flat-square)](https://packagist.org/packages/guapa/timechimp-sdk)
 
